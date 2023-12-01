@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Meth.cpp" />
     <ClCompile Include="Phone book.cpp" />
   </ItemGroup>
   <ItemGroup>

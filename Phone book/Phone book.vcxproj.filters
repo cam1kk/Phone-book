@@ -18,6 +18,9 @@
     <ClCompile Include="Phone book.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Meth.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Phone book.h">

@@ -2,6 +2,7 @@
 #include <iostream>
 using namespace std;
 
+
 class Abonent {
 private:
 	char* fullname;
@@ -10,26 +11,34 @@ private:
 	char homePhone[20];
 	char information[50];
 public:
-	Abonent()
-		: fullname{nullptr},
-		mobilePhone{"-"},
-		workPhone{"-"},
-		homePhone{"-"},
-		information{"-"} {}
-	Abonent(const char* name,const char* mobile,const  char* work,const char* home,const  char* info)
-		: fullname{ new char[strlen(name) + 1] }
-	{
-		strcpy_s(fullname, strlen(name) + 1, name);
-		strcpy_s(mobilePhone, 20, mobile);
-		strcpy_s(workPhone, 20, work);
-		strcpy_s(homePhone, 20, home);
-		strcpy_s(information, 50, info);
-	}
-	void show() {
-		cout << "" << fullname << endl;
-		cout << "mobile: " << mobilePhone << endl;
-		cout << "work: " << workPhone << endl;
-		cout << "home: " << homePhone << endl;
-		cout << "additional info: " << information << endl;
-	}
+
+	Abonent();
+	Abonent(const char*, const char*, const char*, const char*, const char*);
+
+	void show(int);
+
+	void setFullName(const char*);
+	void setMobilePhone(const char*);
+	void setWorkPhone(const char*);
+	void setHomePhone(const char*);
+	void setInformation(const char*);
+
+	char* getFullName();
+};
+
+class Book {
+private:
+	Abonent* abonents;
+	int size;
+	int capacity;
+
+public:
+	Book(int);
+	~Book();
+
+	void addAbonent(const Abonent&);
+	void removeAbonent(int);
+	void findAbonent(char*);
+
+	void showAll();
 };
