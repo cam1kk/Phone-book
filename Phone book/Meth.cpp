@@ -56,7 +56,13 @@ Book::Book(int capacity = 10)
 	: abonents{ new Abonent[capacity] }, size{ 0 }, capacity{ capacity } 
 {}
 Book::~Book() {
+	for (int i = 0; i < size; i++)
+	{
+		delete[] abonents[i].getFullName();
+		cout << 1 << endl;
+	}
 	delete[] abonents;
+	cout << 2 << endl;
 }
 void Book::addAbonent(const Abonent& abonent) {
 	if (size < capacity) {
